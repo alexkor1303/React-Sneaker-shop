@@ -1,0 +1,37 @@
+.card {
+  border: 1px solid #f3f3f3;
+  padding: 29px;
+  border-radius: 40px;
+  span {
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+  h5 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .favorite {
+    position: absolute;
+    cursor: pointer;
+  }
+  .cardBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .cardBottom_price {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+  transition: 0.3s ease-in-out, transform 0.2s ease-in-out;
+  &:hover {
+    border: 1px solid #f8f8f8;
+    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.06);
+    transform: translateY(-5px);
+  }
+}
+ 
