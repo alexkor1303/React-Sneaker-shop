@@ -6,7 +6,6 @@ function Card(props) {
 
   const onClickPlusFunc = () => {
     setIsAdded(!isAdded);
-    console.log(isAdded);
   };
 
   return (
