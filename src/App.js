@@ -1,6 +1,8 @@
+import React from "react";
 import Card from "./components/Card";
 import Drawer from "./components/Drawer";
 import Header from "./components/Header";
+
 const arr = [
   {
     title: "Мужские Кроссовки Nike Blazer Mid Suede",
@@ -63,7 +65,8 @@ function App() {
               title={obj.title}
               price={obj.price}
               imgUrl={obj.imgUrl}
-              onClick={() => console.log(obj)}
+              //   onClickFavorite={() => console.log("Добавили закладки")}
+              //   onClickPlus={() => console.log("Нажали плюс")}
             />
           ))}
         </div>
