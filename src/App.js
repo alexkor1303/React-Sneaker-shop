@@ -6,6 +6,8 @@ import Header from "./components/Header";
 function App() {
   const [cartOpened, setCartOpened] = React.useState(false);
   const [items, setItems] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState([]);
+
   React.useEffect(() => {
     fetch("https://65717b83d61ba6fcc012aed0.mockapi.io/Sneakers")
       .then((res) => {
@@ -15,9 +17,17 @@ function App() {
         setItems(json);
       });
   }, []);
+
+  const onAddToCart = (obj) => {
+    setCartItems((prev) => [...prev, obj]);
+  };
+  console.log(onAddToCart);
+
   return (
     <div className="wrapper clear">
-      {cartOpened && <Drawer onClose={() => setCartOpened(false)} />}
+      {cartOpened && (
+        <Drawer items={cartItems} onClose={() => setCartOpened(false)} />
+      )}
       {}
       <Header onClickCart={() => setCartOpened(true)} />
       <div className="content">
@@ -29,8 +39,13 @@ function App() {
           </div>
         </div>
         <div className="sneakers">
-          {items.map((obj) => (
-            <Card title={obj.title} price={obj.price} imgUrl={obj.imgUrl} />
+          {items.map((item) => (
+            <Card
+              title={item.title}
+              price={item.price}
+              imgUrl={item.imgUrl}
+              onPlus={(obj) => onAddToCart(obj)}
+            />
           ))}
         </div>
       </div>
