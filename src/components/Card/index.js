@@ -23,7 +23,7 @@ function Card(props) {
       <div className={styles.cardBottom}>
         <div className={styles.cardBottom_price}>
           <span>Цена</span>
-          <b>{props.price} rub.</b>
+          <b>{props.price}rub.</b>
         </div>
         <img
           className={styles.plus}
