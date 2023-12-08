@@ -96,12 +96,21 @@ header {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 15px;
+  position: relative;
   input {
     cursor: pointer;
     border: 0;
     font-size: 13px;
     padding: 16px;
     width: 200px;
+  }
+  .clear {
+    position: absolute;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    top: 15px;
+    right: 15px;
   }
 }
 
